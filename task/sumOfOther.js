@@ -1,8 +1,6 @@
 function sumOfOther(arr) {
-  const result = arr.map((elem, i, array) => array.reduce((accum, current, j) => (
-    i !== j ? accum + current : accum
-  ), 0));
-  return result;
+  const sumOfValues = arr.reduce((accum, elem) => accum + elem, 0);
+  return arr.map(elem => sumOfValues - elem);
 }
 
 module.exports = sumOfOther;
