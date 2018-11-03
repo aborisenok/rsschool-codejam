@@ -58,4 +58,34 @@ describe('make should apply taken function to taken arguments', () => {
     const solutions = make(4, 2, 8, 1)(mult);
     assert.deepEqual(solutions, 64);
   });
+
+  it('10', () => {
+    const solutions = make()(sum);
+    assert.deepEqual(solutions, null);
+  });
+
+  it('11', () => {
+    const solutions = make(1)()(2)(sum);
+    assert.deepEqual(solutions, 3);
+  });
+
+  it('12', () => {
+    const solutions = make(mult);
+    assert.deepEqual(solutions, null);
+  });
+
+  it('13', () => {
+    const solutions = make(1)(sum);
+    assert.deepEqual(solutions, 1);
+  });
+
+  it('14', () => {
+    const solutions = make(2)()()()()(3)(mult);
+    assert.deepEqual(solutions, 6);
+  });
+
+  it('15', () => {
+    const solutions = make(4)(mult);
+    assert.deepEqual(solutions, 4);
+  });
 });
